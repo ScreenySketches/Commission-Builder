@@ -1,0 +1,171 @@
+{
+  "currencies": {
+    "USD": { "symbol": "$", "rate": 1.0, "name": "US Dollar" },
+    "CAD": { "symbol": "C$", "rate": 1.35, "name": "Canadian Dollar" },
+    "GBP": { "symbol": "£", "rate": 0.79, "name": "British Pound" }
+  },
+  "discountSettings": {
+    "referenceDiscountPerFile": 2,
+    "maxReferenceDiscount": 4
+  },
+  "artStyles": {
+    "style_basic": { "label": "Basic", "type": "none", "value": 0 },
+    "style_lineless": { "label": "Lineless", "type": "percent", "value": 20 },
+    "style_scene": { "label": "Scene/Sharp", "type": "percent", "value": 10 },
+    "style_pixel": { "label": "Pixelated", "type": "percent", "value": 20 }
+  },
+  "labels": {
+    "siteTitle": "Screeny's Commission Builder",
+    "footerText": "2025 || All Rights Reserved || Developed By Screeny",
+    "nameFieldLabel": "Name/Username/Social Handle",
+    "nameFieldPlaceholder": "Enter your name, username, or social handle",
+    "descriptionFieldLabel": "Commission Description",
+    "descriptionFieldPlaceholder": "Describe what you want for your commission, details help a lot...",
+    "currencyLabel": "Currency",
+    "referenceDiscountText": "Recommended but optional — each additional unique reference beyond the first gives -{currency}{amount} (max -{currency}{max})."
+  },
+  "termsOfService": {
+    "lastUpdated": "August 2025",
+    "content": [
+  "TERMS OF SERVICE",
+  "",
+  "LAST UPDATED: August 2025",
+  "",
+  "By commissioning me, you agree to the following:",
+  "================================================================",
+  "1. Commissions are for personal use only, defined as non-commercial activities such as personal social media sharing, portfolio inclusion, and home printing. Any form of sale, redistribution, or monetization requires a separate commercial license.",
+  "",
+  "2. I may decline or cancel commissions at my discretion.",
+  "",
+  "3. Payment is upfront. If paying in another currency, the amount must be converted so that I receive the agreed USD total after any exchange rates and fees. Payment must be received within 5 business days of invoice unless otherwise agreed.",
+  "----------------------------------------------------------------",
+  "",
+  "4. ACCEPTED PAYMENT METHODS:",
+  "",
+  "  - CashApp — Available only for payments made in USD.",
+  "",
+  "  - PayPal — Available for payments in USD, CAD, and GBP.",
+  "----------------------------------------------------------------",
+  "",
+  "5. The process includes type/style/addon selection, optional reference sheets, and Work In Progress (WIP) updates. A WIP is defined as any draft shared for feedback.",
+  "",
+  "6. Minor revisions (small detail or color adjustments) during the 1st WIP stage are free; major changes (pose, composition, or significant design alterations) may cost extra, especially after WIP approval.",
+  "",
+  "7. Credit me (“Art by Screeny (@screeny_sketches)”) when sharing online or offline. Failure to credit may result in revocation of usage rights.",
+  "",
+  "8. No NSFW, hate content, stolen designs, or extreme gore.",
+  "",
+  "9. Refunds: Full if canceled before work starts, partial/full if I cancel based on progress.",
+  "",
+  "10. Final files are delivered digitally; keep your own backups. Redistribution of altered or unaltered files without consent is prohibited.",
+  "================================================================",
+  "Checking the agreement box confirms you have read and accepted these terms."
+]
+
+
+
+
+
+
+
+,
+    "agreementText": "I have read and agree to the Terms of Service above"
+  },
+  "thumbnails": {
+    "commissionTypes": {
+      "2d": "images/celestialbody.png",
+      "3d": "images/3droblox.png", 
+      "other": "images/wondorref.png"
+    },
+    "subTypes": {
+      "simplified": "images/chucksketch.PNG",
+      "headshot": "images/scene_me.png",
+      "bust": "images/the3cats.PNG",
+      "fullbody": "images/NITWfanart.png",
+      "basicModel": "images/3droblox.png",
+      "detailedModel": "images/warhammerpfpcomiss.png",
+      "fullScene": "images/3droblox.png",
+      "ref_basic": "images/wondorref.png",
+      "ref_dnd": "images/wondorref.png"
+    },
+    "tiers": {
+      "Sketch": "images/chucksketch.PNG",
+      "Flat Color": "images/scene_me.png",
+      "Shaded": "images/NITWfanart.png",
+      "Base": "images/3droblox.png",
+      "Basic OC Sheet": "images/wondorref.png",
+      "D&D Viz + Stats": "images/wondorref.png"
+    },
+    "artStyles": {
+      "style_basic": "images/celestialbody.png",
+      "style_lineless": "images/scene_me.png",
+      "style_scene": "images/NITWfanart.png",
+      "style_pixel": "images/chucksketch.PNG"
+    },
+    "addons": {
+      "additionalCharacter": "images/the3cats.PNG",
+      "animated6s": "images/scene_me.png",
+      "itemProp": "images/warhammerpfpcomiss.png",
+      "detailedChar": "images/NITWfanart.png",
+      "simpleBG": "images/celestialbody.png",
+      "complexBG": "images/warhammerpfpcomiss.png",
+      "basicMaterial": "images/3droblox.png",
+      "customTextures": "images/warhammerpfpcomiss.png"
+    },
+    "fallback": "images/celestialbody.png",
+    "settings": {
+      "width": 290,
+      "height": 250,
+      "objectFit": "cover",
+      "borderRadius": "10px"
+    }
+  },
+  "commissionTypes": [
+    {
+      "id": "2d",
+      "name": "2D Illustration / Sketch",
+      "priceRange": "$5 – $30",
+      "subTypes": [
+        { "id":"simplified", "name": "Simplified / Chibi", "tiers": [{"name":"Sketch","price":5},{"name":"Flat Color","price":10},{"name":"Shaded","price":20}]},
+        { "id":"headshot", "name": "Head Shot", "tiers": [{"name":"Sketch","price":5},{"name":"Flat Color","price":10},{"name":"Shaded","price":20}]},
+        { "id":"bust", "name": "Bust", "tiers": [{"name":"Sketch","price":10},{"name":"Flat Color","price":15},{"name":"Shaded","price":25}]},
+        { "id":"fullbody", "name": "Full-Body", "tiers": [{"name":"Sketch","price":15},{"name":"Flat Color","price":20},{"name":"Shaded","price":30}]}
+      ],
+      "addons": [
+        { "id":"additionalCharacter", "label":"Additional character", "type":"percent", "value":75 },
+        { "id":"animated6s", "label":"Animate up to 6s @18fps", "type":"percent", "value":90 },
+        { "id":"itemProp", "label":"Item / Prop (each)", "type":"flat", "value":7 },
+        { "id":"detailedChar", "label":"Detailed / Complex character", "type":"flat", "value":15 },
+        { "id":"simpleBG", "label":"Simple background", "type":"flat", "value":10 },
+        { "id":"complexBG", "label":"Complex background", "type":"flat", "value":30 }
+      ],
+      "comingSoon": false
+    },
+    {
+      "id": "3d",
+      "name": "3D Blender Render (COMING SOON)",
+      "priceRange": "CONTACT ME FOR 3D COMMISSIONS",
+      "subTypes": [
+        { "id":"basicModel", "name":"Basic Model", "tiers":[{"name":"Base", "price":30}]},
+        { "id":"detailedModel", "name":"Detailed Model", "tiers":[{"name":"Base", "price":60}]},
+        { "id":"fullScene", "name":"Full Scene", "tiers":[{"name":"Base", "price":90}]}
+      ],
+      "addons": [
+        { "id":"basicMaterial", "label":"Basic materials", "type":"flat", "value":15 },
+        { "id":"customTextures", "label":"Custom textures", "type":"flat", "value":25 }
+      ],
+      "comingSoon": true
+    },
+    {
+      "id": "other",
+      "name": "Other / Reference Sheets",
+      "priceRange": "$50 – $65",
+      "subTypes": [
+        { "id":"ref_basic", "name":"Basic OC Sheet", "tiers":[{"name":"Basic OC Sheet", "price":50}]},
+        { "id":"ref_dnd", "name":"D&D Visualization & Stats", "tiers":[{"name":"D&D Viz + Stats", "price":65}]}
+      ],
+      "addons": [],
+      "comingSoon": false
+    }
+  ]
+}

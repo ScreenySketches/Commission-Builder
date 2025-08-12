@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Strong Slime — Commission Builder</title>
+<title>Screeny's Commission Builder</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,10 +11,45 @@
 <header class="header">
   <button id="backBtn" class="btn-back" aria-label="Back">⟵ Back</button>
   <div class="header-title">
-    <h1>Screeny's Commission Builder</h1>
+    <h1 id="siteTitle">Screeny's Commission Builder</h1>
     <div id="crumb" class="crumb">Pick a commission type</div>
   </div>
 </header>
+
+<!-- Step Tracker -->
+<div class="step-tracker">
+  <div class="step-tracker-container">
+    <div class="step-item" data-step="type">
+      <div class="step-circle">1</div>
+      <div class="step-label">Type</div>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step-item" data-step="subtype">
+      <div class="step-circle">2</div>
+      <div class="step-label">Subtype</div>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step-item" data-step="details">
+      <div class="step-circle">3</div>
+      <div class="step-label">Details</div>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step-item" data-step="upload">
+      <div class="step-circle">4</div>
+      <div class="step-label">References</div>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step-item" data-step="summary">
+      <div class="step-circle">5</div>
+      <div class="step-label">Summary</div>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step-item" data-step="tos">
+      <div class="step-circle">6</div>
+      <div class="step-label">Export</div>
+    </div>
+  </div>
+</div>
 
 <main id="app" class="container">
 
@@ -45,6 +80,13 @@
           <div class="muted">Pick a tier</div>
           <div id="tiersArea" class="radio-grid"></div>
         </div>
+
+        <div>
+          <div id="currencyLabel" class="muted">Currency</div>
+          <select id="currencySelect" style="padding:8px;border-radius:8px;background:#000000;border:2px solid #ff0000;color:#ffffff;font-size:14px;margin-top:4px;">
+            <!-- Options will be populated from config -->
+          </select>
+        </div>
       </div>
 
       <div style="margin-top:12px">
@@ -74,15 +116,20 @@
     <div class="step-head">Step 4 — Reference sheets (recommended)</div>
 
     <div class="panel" style="margin-bottom:12px">
-      <div class="strong" style="margin-bottom:8px">Your Name</div>
-      <input id="usernameInput" type="text" placeholder="Enter your name" style="width:100%;padding:10px;border-radius:8px;background:#000000;border:1px solid rgba(255,0,0,0.3);color:#ffffff;font-size:14px;">
+      <div id="nameFieldLabel" class="strong" style="margin-bottom:8px">Name/Username/Social Handle</div>
+      <input id="usernameInput" type="text" placeholder="Enter your name, username, or social handle" style="width:100%;padding:10px;border-radius:8px;background:#000000;border:1px solid rgba(255,0,0,0.3);color:#ffffff;font-size:14px;">
+    </div>
+
+    <div class="panel" style="margin-bottom:12px">
+      <div id="descriptionFieldLabel" class="strong" style="margin-bottom:8px">Commission Description</div>
+      <textarea id="descriptionInput" placeholder="Describe what you want for your commission..." style="width:100%;height:100px;padding:10px;border-radius:8px;background:#000000;border:1px solid rgba(255,0,0,0.3);color:#ffffff;font-size:14px;resize:vertical;"></textarea>
     </div>
 
     <div class="panel uploader">
       <div class="upload-row">
         <div>
           <div class="strong">Upload reference sheets</div>
-          <div class="muted">Recommended but optional — each additional unique reference beyond the first gives -$2 (max -$4).</div>
+          <div id="referenceDiscountText" class="muted">Recommended but optional — each additional unique reference beyond the first gives -$2 (max -$4).</div>
         </div>
         <div>
           <input id="fileInput" type="file" accept="image/*,application/pdf" multiple style="display:none">
@@ -131,19 +178,16 @@
       <div class="strong" style="margin-bottom:12px">Please read and agree to the Terms of Service below:</div>
       
       <div style="margin-bottom:20px">
-        <textarea id="tosContent" readonly
-          style="width:100%;height:300px;border-radius:8px;padding:15px;background:#000000;border:3px solid #000000;color:#ffffff;font-size:14px;line-height:1.5;resize:vertical;cursor:default;"
-          placeholder="Terms of Service will be added here...">TERMS OF SERVICE
-
-[TOS content will be added by the artist]
-
-By checking the box below, you acknowledge that you have read, understood, and agree to be bound by these terms and conditions.</textarea>
+        <div id="tosContent"
+          style="width:100%;height:500px;border-radius:8px;padding:15px;background:#000000;border:3px solid #000000;color:#ffffff;font-size:14px;line-height:1.5;overflow-y:auto;box-sizing:border-box;">
+          Loading Terms of Service...
+        </div>
       </div>
 
       <div style="margin-bottom:20px;padding:15px;background:#2a2a2a;border:3px solid #000000;border-radius:8px;">
-        <label style="display:flex;align-items:center;gap:12px;cursor:pointer;">
+        <label for="tosCheckbox" style="display:flex;align-items:center;gap:12px;cursor:pointer;">
           <input type="checkbox" id="tosCheckbox" style="width:20px;height:20px;cursor:pointer;">
-          <span class="strong" style="color:#ff0000;">I have read and agree to the Terms of Service above</span>
+          <span id="tosAgreementText" class="strong" style="color:#ff0000;">I have read and agree to the Terms of Service above</span>
         </label>
       </div>
 
@@ -164,7 +208,7 @@ By checking the box below, you acknowledge that you have read, understood, and a
   </div>
 </div>
 
-<footer class="footer">2025 || All Rights Reserved || Developed By Screeny - Built for Strong Slime Studios</footer>
+<footer id="footerText" class="footer">2025 || All Rights Reserved || Developed By @screenyboi</footer>
 
 <!-- vendor libs (local) -->
 <script src="vendor/html2canvas.min.js"></script>
