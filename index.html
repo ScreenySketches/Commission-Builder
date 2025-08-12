@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Strong Slime — Commission Builder</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <button id="backBtn" class="btn-back" aria-label="Back">⟵ Back</button>
+  <div class="header-title">
+    <h1>Screeny's Commission Builder</h1>
+    <div id="crumb" class="crumb">Pick a commission type</div>
+  </div>
+</header>
+
+<main id="app" class="container">
+
+  <!-- Step: Type -->
+  <section id="step-type" class="step">
+    <div class="step-head">Step 1 — What kind of commission?</div>
+    <div id="typesGrid" class="grid"></div>
+  </section>
+
+  <!-- Step: Subtype -->
+  <section id="step-subtype" class="step" style="display:none">
+    <div class="step-head">Step 2 — Pick a subtype</div>
+    <div id="subtypeTitle" class="muted"></div>
+    <div id="subtypesGrid" class="grid"></div>
+  </section>
+
+  <!-- Step: Details -->
+  <section id="step-details" class="step" style="display:none">
+    <div class="step-head">Step 3 — Details & Add-ons</div>
+    <div class="panel">
+      <div class="row">
+        <div>
+          <div class="muted">Selected</div>
+          <div id="selectedLabel" class="strong"></div>
+        </div>
+
+        <div style="flex:1">
+          <div class="muted">Pick a tier</div>
+          <div id="tiersArea" class="radio-grid"></div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px">
+        <div class="muted">Art Style (choose one)</div>
+        <div id="styleArea" class="radio-grid" style="margin-top:8px"></div>
+      </div>
+
+      <div style="margin-top:12px">
+        <div class="muted">Add-ons</div>
+        <div id="addonsArea" style="margin-top:8px"></div>
+      </div>
+
+      <div class="total-line">
+        <div class="muted">Subtotal (base + addons - ref discount)</div>
+        <div id="liveSubtotal" class="amount">$0.00</div>
+      </div>
+
+      <div class="actions">
+        <button id="nextToUpload" class="btn-primary">Next: Upload References</button>
+        <button id="resetSelection" class="btn-ghost">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step: Upload refs -->
+  <section id="step-upload" class="step" style="display:none">
+    <div class="step-head">Step 4 — Reference sheets (recommended)</div>
+
+    <div class="panel" style="margin-bottom:12px">
+      <div class="strong" style="margin-bottom:8px">Your Name</div>
+      <input id="usernameInput" type="text" placeholder="Enter your name" style="width:100%;padding:10px;border-radius:8px;background:#000000;border:1px solid rgba(255,0,0,0.3);color:#ffffff;font-size:14px;">
+    </div>
+
+    <div class="panel uploader">
+      <div class="upload-row">
+        <div>
+          <div class="strong">Upload reference sheets</div>
+          <div class="muted">Recommended but optional — each additional unique reference beyond the first gives -$2 (max -$4).</div>
+        </div>
+        <div>
+          <input id="fileInput" type="file" accept="image/*,application/pdf" multiple style="display:none">
+          <button id="addFilesBtn" class="btn-ghost">Add files</button>
+        </div>
+      </div>
+
+      <div id="fileList" class="file-list"></div>
+
+      <div class="ref-line">
+        <div class="muted">Reference discount</div>
+        <div id="refDiscount" class="amount">-$0.00</div>
+      </div>
+
+      <div class="actions">
+        <button id="finishBtn" class="btn-primary">Finish & Summary</button>
+        <button id="skipUpload" class="btn-ghost">Skip</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step: Summary -->
+  <section id="step-summary" class="step" style="display:none">
+    <div class="step-head">Summary</div>
+    <div class="panel" id="summaryPanel">
+      <div id="summaryText"></div>
+
+      <div class="total-line">
+        <div class="muted">Estimated total</div>
+        <div id="finalTotal" class="amount">$0.00</div>
+      </div>
+
+      <div class="actions" style="margin-top:12px">
+        <button id="proceedToTos" class="btn-primary">Review Terms & Export PDF</button>
+        <button id="copySummary" class="btn-ghost">Copy Summary</button>
+      </div>
+
+      <textarea id="summaryCopy" class="summary-textarea" readonly></textarea>
+    </div>
+  </section>
+
+  <!-- Step: Terms of Service -->
+  <section id="step-tos" class="step" style="display:none">
+    <div class="step-head">Terms of Service</div>
+    <div class="panel">
+      <div class="strong" style="margin-bottom:12px">Please read and agree to the Terms of Service below:</div>
+      
+      <div style="margin-bottom:20px">
+        <textarea id="tosContent" readonly
+          style="width:100%;height:300px;border-radius:8px;padding:15px;background:#000000;border:3px solid #000000;color:#ffffff;font-size:14px;line-height:1.5;resize:vertical;cursor:default;"
+          placeholder="Terms of Service will be added here...">TERMS OF SERVICE
+
+[TOS content will be added by the artist]
+
+By checking the box below, you acknowledge that you have read, understood, and agree to be bound by these terms and conditions.</textarea>
+      </div>
+
+      <div style="margin-bottom:20px;padding:15px;background:#2a2a2a;border:3px solid #000000;border-radius:8px;">
+        <label style="display:flex;align-items:center;gap:12px;cursor:pointer;">
+          <input type="checkbox" id="tosCheckbox" style="width:20px;height:20px;cursor:pointer;">
+          <span class="strong" style="color:#ff0000;">I have read and agree to the Terms of Service above</span>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="exportPdfBtn" class="btn-primary" disabled>Export PDF</button>
+        <button id="backToSummary" class="btn-ghost">Back to Summary</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- spinner -->
+<div id="pdfSpinner" class="spinner" aria-hidden="true">
+  <div class="spinner-box">
+    <div class="lds"></div>
+    <div style="margin-top:8px">Generating PDF…</div>
+  </div>
+</div>
+
+<footer class="footer">2025 || All Rights Reserved || Developed By Screeny - Built for Strong Slime Studios</footer>
+
+<!-- vendor libs (local) -->
+<script src="vendor/html2canvas.min.js"></script>
+<script src="vendor/jspdf.umd.min.js"></script>
+
+<!-- app logic -->
+<script src="app.js"></script>
+</body>
+</html>
