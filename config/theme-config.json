@@ -1,0 +1,64 @@
+{
+  "colors": {
+    "primary": {
+      "background": "#1a1a1a",
+      "card": "#000000",
+      "panel": "#000000",
+      "text": "#ffffff",
+      "muted": "#ffffff",
+      "accent": "#ff0000",
+      "accentSecondary": "#ff0000"
+    },
+    "interactive": {
+      "buttonPrimary": "#ff0000",
+      "buttonPrimaryText": "#ffffff",
+      "buttonPrimaryDisabled": "#666666",
+      "buttonPrimaryDisabledText": "#cccccc",
+      "buttonGhost": "transparent",
+      "buttonGhostBorder": "#ff0000",
+      "buttonGhostText": "#ff0000",
+      "buttonBack": "transparent",
+      "buttonBackBorder": "#ff0000",
+      "buttonBackText": "#ff0000"
+    },
+    "forms": {
+      "inputBackground": "#000000",
+      "inputBorder": "rgba(255,0,0,0.3)",
+      "inputText": "#ffffff",
+      "selectBackground": "#000000",
+      "selectBorder": "#ff0000",
+      "selectText": "#ffffff"
+    },
+    "borders": {
+      "card": "#000000",
+      "panel": "#000000",
+      "radioCard": "#2a2a2a",
+      "addon": "#2a2a2a",
+      "uploader": "#ff0000",
+      "fileThumb": "#000000",
+      "totalLine": "rgba(255,0,0,0.3)"
+    },
+    "stepTracker": {
+      "completed": "#ff0000",
+      "current": "#ff0000",
+      "upcoming": "#666666",
+      "completedText": "#ffffff",
+      "currentText": "#ffffff",
+      "upcomingText": "#999999",
+      "connector": "#333333",
+      "connectorActive": "#ff0000"
+    },
+    "effects": {
+      "glass": "rgba(255,0,0,0.1)",
+      "overlay": "rgba(0,0,0,0.45)",
+      "fileRemove": "rgba(0,0,0,0.6)"
+    }
+  },
+  "spacing": {
+    "radius": "12px",
+    "radiusSmall": "8px",
+    "radiusMedium": "10px",
+    "gap": "12px",
+    "gapSmall": "8px"
+  }
+}

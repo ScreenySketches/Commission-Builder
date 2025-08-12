@@ -1,0 +1,112 @@
+{
+  "_comment": "THUMBNAIL CONFIGURATION EXAMPLES - Copy sections to commission-config.json",
+  
+  "example_1_basic_setup": {
+    "description": "Simple local image files",
+    "thumbnails": {
+      "commissionTypes": {
+        "2d": "images/2d-art.png",
+        "3d": "images/3d-render.jpg", 
+        "other": "images/reference.png"
+      },
+      "subTypes": {
+        "simplified": "images/chibi.png",
+        "headshot": "images/portrait.jpg",
+        "bust": "images/upper-body.png",
+        "fullbody": "images/full-character.jpg"
+      },
+      "fallback": "images/default.png",
+      "settings": {
+        "width": 290,
+        "height": 120,
+        "objectFit": "cover",
+        "borderRadius": "10px"
+      }
+    }
+  },
+
+  "example_2_organized_folders": {
+    "description": "Organized in subfolders",
+    "thumbnails": {
+      "commissionTypes": {
+        "2d": "images/types/2d-illustration.png",
+        "3d": "images/types/3d-modeling.png",
+        "other": "images/types/reference-sheets.png"
+      },
+      "subTypes": {
+        "simplified": "images/subtypes/chibi-style.png",
+        "headshot": "images/subtypes/head-portrait.png",
+        "bust": "images/subtypes/bust-art.png",
+        "fullbody": "images/subtypes/fullbody-art.png",
+        "basicModel": "images/subtypes/basic-3d.png",
+        "detailedModel": "images/subtypes/detailed-3d.png",
+        "fullScene": "images/subtypes/full-scene.png"
+      }
+    }
+  },
+
+  "example_3_external_urls": {
+    "description": "Using images from external URLs",
+    "thumbnails": {
+      "commissionTypes": {
+        "2d": "https://example.com/portfolio/2d-samples.jpg",
+        "3d": "https://example.com/portfolio/3d-samples.jpg",
+        "other": "https://example.com/portfolio/reference-samples.jpg"
+      },
+      "fallback": "https://example.com/default-thumbnail.png"
+    }
+  },
+
+  "example_4_mixed_formats": {
+    "description": "Different file formats and sizes",
+    "thumbnails": {
+      "commissionTypes": {
+        "2d": "images/2d-sample.webp",
+        "3d": "images/3d-sample.jpg",
+        "other": "images/other-sample.png"
+      },
+      "settings": {
+        "width": 350,
+        "height": 200,
+        "objectFit": "contain",
+        "borderRadius": "15px"
+      }
+    }
+  },
+
+  "example_5_square_thumbnails": {
+    "description": "Square thumbnails for Instagram-style layout",
+    "thumbnails": {
+      "settings": {
+        "width": 200,
+        "height": 200,
+        "objectFit": "cover",
+        "borderRadius": "12px"
+      }
+    }
+  },
+
+  "example_6_no_rounded_corners": {
+    "description": "Sharp corners for a more professional look",
+    "thumbnails": {
+      "settings": {
+        "borderRadius": "0px"
+      }
+    }
+  },
+
+  "quick_tips": {
+    "optimal_image_size": "290x120 pixels (default)",
+    "best_formats": "PNG for artwork, JPEG for photos, WebP for smallest files",
+    "max_file_size": "500KB recommended for fast loading",
+    "aspect_ratio": "2.4:1 (width:height) works best with default settings",
+    "fallback_usage": "Always set a fallback image in case others fail to load"
+  },
+
+  "common_mistakes": {
+    "wrong_path": "Double-check file paths - 'image/art.png' vs 'images/art.png'",
+    "missing_extension": "Include file extension - 'art.png' not just 'art'",
+    "case_sensitivity": "Match exact filename case - 'Art.PNG' vs 'art.png'",
+    "spaces_in_names": "Use 'my-art.png' instead of 'my art.png'"
+  }
+}
