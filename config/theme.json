@@ -1,0 +1,40 @@
+{
+  "colors": {
+    "background": "#1a1a1a",
+    "cardBackground": "#000000",
+    "panelBackground": "#2a2a2a",
+    "innerCardBackground": "#000000",
+    "detailsUIBackground": "#2a2a2a",
+    "primaryText": "#ffffff",
+    "mutedText": "#ffffff",
+    "accentColor": "#ff0000",
+    "accentColor2": "#ff0000",
+    "glassEffect": "rgba(255,0,0,0.1)",
+    "borderColor": "#000000",
+    "borderAccent": "rgba(255,0,0,0.3)",
+    "buttonPrimary": "#ff0000",
+    "buttonPrimaryText": "#ffffff",
+    "buttonGhost": "transparent",
+    "buttonGhostBorder": "#ff0000",
+    "buttonGhostText": "#ff0000",
+    "buttonDisabled": "#666666",
+    "buttonDisabledText": "#cccccc",
+    "inputBackground": "#000000",
+    "inputBorder": "rgba(255,0,0,0.3)",
+    "inputText": "#ffffff",
+    "spinnerBackground": "rgba(0,0,0,0.45)",
+    "spinnerBox": "#2a2a2a",
+    "fileThumbBackground": "#000000",
+    "fileRemoveBackground": "rgba(0,0,0,0.6)"
+  },
+  "dimensions": {
+    "borderRadius": "12px",
+    "gap": "12px",
+    "smallRadius": "8px",
+    "largeRadius": "15px"
+  },
+  "fonts": {
+    "primary": "Inter, system-ui, -apple-system, Roboto, \"Segoe UI\", Arial",
+    "fallback": "system-ui, -apple-system, Roboto, \"Segoe UI\", Arial"
+  }
+}
