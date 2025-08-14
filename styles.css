@@ -77,8 +77,59 @@ h1, h2, h3, .step-head, .strong {
   font-size: 16px;
   font-weight: 600;
   position: absolute;
-  top: 150px;
-  left: 75px;
+  top: 15px;
+  left: 15px;
+  z-index: 10;
+}
+
+/* Mobile responsive back button */
+@media (max-width: 768px) {
+  .btn-back {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 8px 12px;
+    font-size: 14px;
+    z-index: 100;
+  }
+  
+  .header {
+    padding-top: 60px;
+  }
+  
+  .header-title {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-back {
+    top: 15px;
+    left: 15px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .header {
+    padding: 10px;
+    padding-top: 55px;
+  }
+}
+
+/* Mobile responsive for details row */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .row > div {
+    margin-bottom: 16px;
+  }
+  
+  .row > div:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .crumb {
@@ -123,7 +174,8 @@ h1, h2, h3, .step-head, .strong {
 }
 
 .thumb {
-  height: 120px;
+  aspect-ratio: 1;
+  width: 100%;
   border-radius: 10px;
   background: var(--bg);
   display: flex;
@@ -131,6 +183,33 @@ h1, h2, h3, .step-head, .strong {
   justify-content: center;
   color: var(--primary-text);
   font-weight: 700;
+  overflow: hidden;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Fallback for browsers without aspect-ratio support */
+@supports not (aspect-ratio: 1) {
+  .thumb {
+    height: 0;
+    padding-bottom: 100%; /* Creates 1:1 aspect ratio */
+    position: relative;
+  }
+  
+  .thumb > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .muted {
@@ -164,7 +243,7 @@ h1, h2, h3, .step-head, .strong {
 }
 
 .radio-card {
-  background: var(--details-ui);
+  background: var(--inner-card);
   border-radius: 10px;
   padding: 8px;
   border: 3px solid var(--border);
@@ -177,7 +256,7 @@ h1, h2, h3, .step-head, .strong {
   gap: 8px;
   padding: 8px;
   border-radius: var(--small-radius);
-  background: var(--details-ui);
+  background: var(--panel);
   border: 3px solid var(--border);
   margin: 6px 0;
 }

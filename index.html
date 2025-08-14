@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Strong Slime — Commission Builder</title>
+<title>Screeny's — Commission Builder</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,28 +12,23 @@
   <button id="backBtn" class="btn-back" aria-label="Back">⟵ Back</button>
   <div class="header-title">
     <h1>Screeny's Commission Builder</h1>
-    <div id="crumb" class="crumb">Pick a commission type</div>
+    <div style="font-size: 18px; color: #888; margin-top: 2px; font-weight: 600;">VERSION 1</div>
+    <div id="crumb" class="crumb"></div>
   </div>
 </header>
 
 <main id="app" class="container">
 
-  <!-- Step: Type -->
-  <section id="step-type" class="step">
-    <div class="step-head">Step 1 — What kind of commission?</div>
-    <div id="typesGrid" class="grid"></div>
-  </section>
-
   <!-- Step: Subtype -->
-  <section id="step-subtype" class="step" style="display:none">
-    <div class="step-head">Step 2 — Pick a subtype</div>
+  <section id="step-subtype" class="step">
+    <div class="step-head">Step 1 — Pick a subtype</div>
     <div id="subtypeTitle" class="muted"></div>
     <div id="subtypesGrid" class="grid"></div>
   </section>
 
   <!-- Step: Details -->
   <section id="step-details" class="step" style="display:none">
-    <div class="step-head">Step 3 — Details & Add-ons</div>
+    <div class="step-head">Step 2 — Details & Add-ons</div>
     <div class="panel">
       <div class="row">
         <div>
@@ -45,11 +40,13 @@
           <div class="muted">Pick a tier</div>
           <div id="tiersArea" class="radio-grid"></div>
         </div>
-      </div>
 
-      <div style="margin-top:12px">
-        <div class="muted">Art Style (choose one)</div>
-        <div id="styleArea" class="radio-grid" style="margin-top:8px"></div>
+        <div style="min-width:200px;">
+          <div class="muted">Currency</div>
+          <select id="currencySelect" style="width:100%;font-size:14px;margin-top:8px;">
+            <!-- Options will be populated by JavaScript -->
+          </select>
+        </div>
       </div>
 
       <div style="margin-top:12px">
@@ -71,19 +68,14 @@
 
   <!-- Step: Upload refs -->
   <section id="step-upload" class="step" style="display:none">
-    <div class="step-head">Step 4 — Reference sheets (recommended)</div>
+    <div class="step-head">Step 3 — Reference sheets (recommended)</div>
 
     <div class="panel" style="margin-bottom:12px">
-      <div class="strong" style="margin-bottom:8px">Name/Username/Social Handle</div>
+      <div id="nameFieldLabel" class="strong" style="margin-bottom:8px">Name/Username/Social Handle</div>
       <input id="usernameInput" type="text" placeholder="Enter your name/username/handle" style="width:100%;padding:10px;border-radius:8px;background:var(--input-bg);border:1px solid var(--input-border);color:var(--input-text);font-size:14px;">
     </div>
 
-    <div class="panel" style="margin-bottom:12px">
-      <div class="strong" style="margin-bottom:8px">Currency</div>
-      <select id="currencySelect" style="width:100%;padding:10px;border-radius:8px;background:var(--input-bg);border:1px solid var(--input-border);color:var(--input-text);font-size:14px;">
-        <!-- Options will be populated by JavaScript -->
-      </select>
-    </div>
+
 
     <div class="panel uploader">
       <div class="upload-row">
@@ -113,7 +105,7 @@
 
   <!-- Step: Summary -->
   <section id="step-summary" class="step" style="display:none">
-    <div class="step-head">Summary</div>
+    <div class="step-head">Step 4 — Summary</div>
     <div class="panel" id="summaryPanel">
       <div id="summaryText"></div>
 
@@ -133,24 +125,23 @@
 
   <!-- Step: Terms of Service -->
   <section id="step-tos" class="step" style="display:none">
-    <div class="step-head">Terms of Service</div>
+    <div class="step-head">Step 5 — Terms of Service</div>
     <div class="panel">
-      <div class="strong" style="margin-bottom:12px">Please read and agree to the Terms of Service below:</div>
+      <div class="strong" style="margin-bottom:12px">Please read and agree to our Terms of Service:</div>
       
-      <div style="margin-bottom:20px">
-        <textarea id="tosContent" readonly
-          style="width:100%;height:300px;border-radius:8px;padding:15px;background:#000000;border:3px solid #000000;color:#ffffff;font-size:14px;line-height:1.5;resize:vertical;cursor:default;"
-          placeholder="Terms of Service will be added here...">TERMS OF SERVICE
-
-[TOS content will be added by the artist]
-
-By checking the box below, you acknowledge that you have read, understood, and agree to be bound by these terms and conditions.</textarea>
+      <div style="margin-bottom:20px;padding:20px;background:#2a2a2a;border:3px solid #000000;border-radius:8px;text-align:center;">
+        <div style="margin-bottom:15px;font-size:16px;">
+          📋 Please review our Terms of Service before proceeding
+        </div>
+        <a id="tosLink" href="#" target="_blank" style="display:inline-block;padding:12px 24px;background:var(--accent);color:#ffffff;text-decoration:none;border-radius:8px;font-weight:600;font-size:16px;">
+          View Terms of Service
+        </a>
       </div>
 
       <div style="margin-bottom:20px;padding:15px;background:#2a2a2a;border:3px solid #000000;border-radius:8px;">
         <label style="display:flex;align-items:center;gap:12px;cursor:pointer;">
           <input type="checkbox" id="tosCheckbox" style="width:20px;height:20px;cursor:pointer;">
-          <span class="strong" style="color:#ff0000;">I have read and agree to the Terms of Service above</span>
+          <span class="strong" style="color:#ff0000;">I have read and agree to the Terms of Service</span>
         </label>
       </div>
 
@@ -171,7 +162,7 @@ By checking the box below, you acknowledge that you have read, understood, and a
   </div>
 </div>
 
-<footer class="footer">2025 || All Rights Reserved || Developed By Screeny - Built for Strong Slime Studios</footer>
+<footer class="footer">2025 || All Rights Reserved || Developed By Screeny</footer>
 
 <!-- vendor libs (local) -->
 <script src="vendor/html2canvas.min.js"></script>

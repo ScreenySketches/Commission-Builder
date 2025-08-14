@@ -1,0 +1,24 @@
+{
+  "_comment": "Example theme configuration - shows how to customize branding",
+  "branding": {
+    "logo": "images/logo.png",
+    "backgroundImage": "images/background.jpg",
+    "backgroundColor": "#1a1a1a"
+  },
+  "_usage_notes": {
+    "logo": "Path to logo image (shown above title). Max height: 40px, max width: 200px",
+    "backgroundImage": "Path to background image. If set, overrides backgroundColor",
+    "backgroundColor": "CSS color value for solid background (hex, rgb, named colors, etc.)"
+  },
+  "_examples": {
+    "gradient_background": {
+      "backgroundColor": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+    },
+    "solid_color": {
+      "backgroundColor": "#2d3748"
+    },
+    "image_background": {
+      "backgroundImage": "images/commission-bg.jpg"
+    }
+  }
+}

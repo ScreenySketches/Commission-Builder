@@ -1,32 +1,21 @@
 {
   "currencies": {
     "USD": { "symbol": "$", "name": "US Dollar", "rate": 1.0 },
-    "EUR": { "symbol": "€", "name": "Euro", "rate": 0.85 },
-    "GBP": { "symbol": "£", "name": "British Pound", "rate": 0.73 },
-    "CAD": { "symbol": "C$", "name": "Canadian Dollar", "rate": 1.35 },
-    "AUD": { "symbol": "A$", "name": "Australian Dollar", "rate": 1.45 },
-    "JPY": { "symbol": "¥", "name": "Japanese Yen", "rate": 110.0 }
+    "CAD": { "symbol": "C$", "name": "Canadian Dollar", "rate": 1.35 }
   },
   "defaultCurrency": "USD",
   "commissionTypes": [
     {
-      "id": "2d",
-      "name": "2D Illustration / Sketch",
-      "thumbSVG": "<svg width=\"290\" height=\"120\" viewBox=\"0 0 290 120\" xmlns=\"http://www.w3.org/2000/svg\"><image href=\"images/celestialbody.png\" x=\"0\" y=\"0\" width=\"290\" height=\"120\" preserveAspectRatio=\"xMidYMid slice\" /></svg>",
-      "priceRange": "$5 – $30",
+      "id": "commission",
+      "name": "Start Commission",
+      "thumbSVG": "<svg width=\"290\" height=\"290\" viewBox=\"0 0 290 120\" xmlns=\"http://www.w3.org/2000/svg\"><image href=\"images/celestialbody.png\" x=\"0\" y=\"0\" width=\"290\" height=\"120\" preserveAspectRatio=\"xMidYMid slice\" /></svg>",
+      "priceRange": "",
       "subTypes": [
-        {
-          "id": "simplified",
-          "name": "Simplified / Chibi",
-          "tiers": [
-            { "name": "Sketch", "price": 5 },
-            { "name": "Flat Color", "price": 10 },
-            { "name": "Shaded", "price": 20 }
-          ]
-        },
         {
           "id": "headshot",
           "name": "Head Shot",
+          "thumbnail": "images/chucksketch.PNG",
+          "priceRange": "",
           "tiers": [
             { "name": "Sketch", "price": 5 },
             { "name": "Flat Color", "price": 10 },
@@ -36,6 +25,8 @@
         {
           "id": "bust",
           "name": "Bust",
+          "thumbnail": "images/warhammerpfpcomiss.png",
+          "priceRange": "",
           "tiers": [
             { "name": "Sketch", "price": 10 },
             { "name": "Flat Color", "price": 15 },
@@ -45,6 +36,8 @@
         {
           "id": "fullbody",
           "name": "Full-Body",
+          "thumbnail": "images/celestialbody.png",
+          "priceRange": "",
           "tiers": [
             { "name": "Sketch", "price": 15 },
             { "name": "Flat Color", "price": 20 },
@@ -54,48 +47,13 @@
       ],
       "addons": [
         { "id": "additionalCharacter", "label": "Additional character", "type": "percent", "value": 75 },
-        { "id": "animated6s", "label": "Animate up to 6s @18fps", "type": "percent", "value": 90 },
         { "id": "itemProp", "label": "Item / Prop (each)", "type": "flat", "value": 7 },
         { "id": "detailedChar", "label": "Detailed / Complex character", "type": "flat", "value": 15 },
         { "id": "simpleBG", "label": "Simple background", "type": "flat", "value": 10 },
         { "id": "complexBG", "label": "Complex background", "type": "flat", "value": 30 }
       ],
       "comingSoon": false
-    },
-    {
-      "id": "3d",
-      "name": "3D Blender Render (COMING SOON)",
-      "thumbSVG": "<svg width=\"290\" height=\"120\" viewBox=\"0 0 290 120\" xmlns=\"http://www.w3.org/2000/svg\"><image href=\"images/3droblox.png\" x=\"0\" y=\"0\" width=\"290\" height=\"120\" preserveAspectRatio=\"xMidYMid slice\" /></svg>",
-      "priceRange": "CONTACT ME FOR 3D COMMISSIONS",
-      "subTypes": [
-        { "id": "basicModel", "name": "Basic Model", "tiers": [{ "name": "Base", "price": 30 }] },
-        { "id": "detailedModel", "name": "Detailed Model", "tiers": [{ "name": "Base", "price": 60 }] },
-        { "id": "fullScene", "name": "Full Scene", "tiers": [{ "name": "Base", "price": 90 }] }
-      ],
-      "addons": [
-        { "id": "basicMaterial", "label": "Basic materials", "type": "flat", "value": 15 },
-        { "id": "customTextures", "label": "Custom textures", "type": "flat", "value": 25 }
-      ],
-      "comingSoon": true
-    },
-    {
-      "id": "other",
-      "name": "Other / Reference Sheets",
-      "thumbSVG": "<svg width=\"290\" height=\"120\" viewBox=\"0 0 290 120\" xmlns=\"http://www.w3.org/2000/svg\"><image href=\"images/wondorref.png\" x=\"0\" y=\"-20\" width=\"290\" height=\"300\" preserveAspectRatio=\"xMidYMid slice\" /></svg>",
-      "priceRange": "$50 – $65",
-      "subTypes": [
-        { "id": "ref_basic", "name": "Basic OC Sheet", "tiers": [{ "name": "Basic OC Sheet", "price": 50 }] },
-        { "id": "ref_dnd", "name": "D&D Visualization & Stats", "tiers": [{ "name": "D&D Viz + Stats", "price": 65 }] }
-      ],
-      "addons": [],
-      "comingSoon": false
     }
-  ],
-  "artStyles": [
-    { "id": "style_basic", "label": "Basic (no fee)", "type": "none", "value": 0 },
-    { "id": "style_lineless", "label": "Lineless", "type": "price", "value": 3 },
-    { "id": "style_scene", "label": "Scene/Sharp", "type": "price", "value": 2 },
-    { "id": "style_pixel", "label": "Pixelated", "type": "price", "value": 4 }
   ],
   "referenceDiscount": {
     "perFile": 2,
@@ -105,11 +63,17 @@
     "nameField": "Name/Username/Social Handle",
     "stepTitles": {
       "type": "Pick a commission type",
-      "subtype": "Pick a subtype", 
-      "details": "Details & add-ons",
-      "upload": "Reference upload",
-      "summary": "Summary",
-      "tos": "Terms of Service"
+      "subtype": "Step 1 — Pick a subtype", 
+      "details": "Step 2 — Details & add-ons",
+      "upload": "Step 3 — Reference upload",
+      "summary": "Step 4 — Summary",
+      "tos": "Step 5 — Terms of Service"
     }
+  },
+  "tosUrl": "https://example.com/terms-of-service",
+  "branding": {
+    "logo": "",
+    "backgroundImage": "",
+    "backgroundColor": ""
   }
 }
